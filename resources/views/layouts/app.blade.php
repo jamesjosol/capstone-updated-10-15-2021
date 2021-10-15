@@ -59,10 +59,18 @@
             });
         });
 
-       function btnload(msg) {
-        btn = document.getElementById('actionBtn');
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (typeof(msg) !== 'undefined' ? msg : 'Please wait...');
-    }
+        function btnload(msg) {
+           
+            btn = document.getElementById('actionBtn');
+            btntxt = btn.innerText;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (typeof(msg) !== 'undefined' ? msg : 'Please wait...');
+
+            setTimeout(function(){ 
+
+            btn.innerHTML = btntxt;
+            
+            }, 3000);
+        }
     </script>
 </body>
 </html>

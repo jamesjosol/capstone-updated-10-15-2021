@@ -32,9 +32,12 @@
                                 <span class="errspan" id="errspan">{{ $errors->first('password') }}</span>
                             </div>
 
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Remember username</label>
+                            <div class="mb-3 form-group form-check">
+                                {!! Form::label('remember', 'Remember username',[],false) !!}
+                                {!! Form::checkbox('remember', 1) !!}
+                              
+                                {{-- <input type="checkbox" name="remember" value="remember" class="form-check-input" id="remember">
+                                <label class="form-check-label" for="remember">Remember username</label> --}}
                             </div>
 
                             <button type="submit"  onclick="btnload()" class="btn btn-primary regbtn" id="actionBtn">Login</button>

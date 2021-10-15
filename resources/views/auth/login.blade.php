@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('component.info_msg')
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -24,7 +26,7 @@
                                 <span class="errspan" id="errspan">{{ $errors->first('username') }}</span>
                             </div>
 
-                            <a class="float-right" href="">forgot password?</a><br>
+                            <a class="float-right text-primary" href="">forgot password?</a><br>
 
                             <div class="mb-3 form-group @error('password') has-error @enderror">
                                 {!! Form::label('password', 'Password',[],false) !!}
@@ -33,11 +35,13 @@
                             </div>
 
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Remember username</label>
+                                {{-- {!! Form::checkbox('remember', 'remember', ['class'=>'form-check-input']) !!}
+                                {!! Form::label('remember', 'Remember username',['class'=>'form-check-label'],false) !!} --}}
+                                <input type="checkbox" name="remember" value="remember" class="form-check-input" id="remember">
+                                <label class="form-check-label" for="remember">Remember me</label>
                             </div>
 
-                            <button type="submit"  onclick="btnload()" class="btn btn-primary regbtn" id="actionBtn">Login</button>
+                            <button type="submit" onclick="btnload()" class="btn btn-primary regbtn" id="actionBtn">Login</button>
 
                             <p style="margin-top:1rem;">Don't have an account yet?</p>
                             <p style="margin-top:-1rem;">Click <a href="/register">Register</a></p>

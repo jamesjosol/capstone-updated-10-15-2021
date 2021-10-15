@@ -47,6 +47,8 @@ class LoginController extends Controller
     }
     
     public function login(Request $request) {
+        $remember = $request->has('remember');
+    
         $request->validate([
             'username'      => 'required|string',
             'password'      => 'required|string',
@@ -64,7 +66,7 @@ class LoginController extends Controller
         // }
 
        
-        if(auth()->attempt(['username' => $request->username, 'password' => $request->password])) {
+        if(auth()->attempt(['username' => $request->username, 'password' => $request->password], $remember)) {
             if(auth()->user()->role == 1) {
                 return redirect()->route('admin.dashboard');
             }else if(auth()->user()->role == 2) {

@@ -15,14 +15,42 @@
             <form class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link box" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link box{{ Request::is('/') ? '-nav-item-active' : '' }}" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link box" href="{{ url('/about') }}">About Us</a>
+                        <a class="nav-link box{{ Request::is('about') ? '-nav-item-active' : '' }}" href="{{ url('/about') }}">About Us</a>
                     </li>
+                    @if (Request::is('/') || Request::is('about') ||  Request::is('login') || Request::is('register'))
+                    
+                        @if (auth()->check())
+                            @if (auth()->user()->role == 1)
+                                <li class="nav-item">
+                                    <a class="nav-link box{{ Request::is('admin/dashboard') ? '-nav-item-active' : '' }}" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                </li>
+                            @elseif(auth()->user()->role == 2)
+                                <li class="nav-item">
+                                    <a class="nav-link box{{ Request::is('user/dashboard') ? '-nav-item-active' : '' }}" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                </li>
+                            @endif
+                        <li class="nav-item">
+                            <a class="nav-link box" href="{{ route('logout') }}">Logout</a>
+                        </li>
+                    @else
+                        <ul class="navbar-nav me-auto ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link box{{ Request::is('login') ? '-nav-item-active' : '' }}" href="/login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link box{{ Request::is('register') ? '-nav-item-active' : '' }}" href="/register">Register</a>
+                            </li>
+                        </ul>
+                    @endif
+                @endif
+                {{-- <li class="nav-item">
+                    <a class="nav-link box" href="{{ route('logout') }}">Logout</a>
+                </li> --}}
                 </ul>
-                @if (auth()->check())
-                <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                
                 {{-- <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -32,16 +60,9 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form> --}}
-                @else
-                <ul class="navbar-nav me-auto ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link box" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link box" href="/register">Register</a>
-                    </li>
-                </ul>
-                @endif
+                    
+               
+                
             </form>
         </div>
     </div>

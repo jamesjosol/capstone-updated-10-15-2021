@@ -60,6 +60,13 @@ nav {
     transition: width 0.4s ease-out;
 }
 
+.box-nav-item-active {
+    color: yellow !important;
+    border-bottom: 3px solid red;
+    height: 92%;
+    
+}
+
 .box:hover.box::after {
     width: 100%;
 }
@@ -194,4 +201,15 @@ nav {
 .errspan  {
     font-size: 0.8em;
     color: rgb(255, 113, 113);
+}
+
+.ok-close-btn {
+    background-color: deepskyblue;
+    color: #fff;
+    padding: 2% 4% 2% 4%;
+}
+
+.ok-close-btn:hover {
+    background-color: rgb(41, 201, 255);
+    color: #fff;
 }
