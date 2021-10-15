@@ -9,7 +9,7 @@
     </div>
 
     <ul class="nav-list">
-        <li>
+        <li class="" style="display: none">
             <a>
                 <i class='bx bx-search'></i>
                 
