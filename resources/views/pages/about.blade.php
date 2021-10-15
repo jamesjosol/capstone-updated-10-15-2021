@@ -1,3 +1,5 @@
+@section('mytitle', '| About')
+
 @extends('layouts.app')
 
 <img src="../img/aboutbg.png" alt="" id="aboutbg">
