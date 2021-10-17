@@ -10,7 +10,7 @@
                     <div class="stat-card__content">
                         <p class="text-uppercase md-1 text-muted">Admin</p>
 
-                        <h1 class="total">1</h1>
+                        <h1 class="total">{{ $admins }}</h1>
                     </div>
                     <div class="stat-card__icon--info">
                         <div class="stat-card__icon-circle">
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col">
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 1%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">1%</div>
+                    <div class="progress-bar" role="progressbar" style="width: {{$adminsBarWidth}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{$adminsBarWidth}}%</div>
                 </div>
             </div>        
         </div>

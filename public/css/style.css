@@ -213,3 +213,50 @@ nav {
     background-color: rgb(41, 201, 255);
     color: #fff;
 }
+
+.removehr {
+    border-bottom: 0 none;
+}
+
+.tooltip-actbtn {
+    display:inline-block;
+    position:relative;
+    margin: 1px;
+    
+}
+
+.tooltiptxt {
+    color: #11101d;
+}
+
+.tooltip-actbtn .top {
+    font-weight: 300;
+    min-width:80px; 
+    height: 80%;
+    top:-10px;
+    left:50%;
+    transform:translate(-50%, -100%);
+    font-size: 0.9em;
+    color:#000 !important;
+    background: #fff;
+    border-radius: 6px;
+    position:absolute;
+    z-index:999;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tooltip-actbtn:hover .top {
+    visibility:visible; opacity:1;
+}
+
+.card-table {
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}

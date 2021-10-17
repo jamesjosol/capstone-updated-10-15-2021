@@ -81,10 +81,24 @@ a:focus {
     line-height: 50px;
     transform: translateX(-50%);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .sidebar.active #btn-menu {
+    
     left: 90%;
+}
+
+.sidebar.active #btn-menu > .fa-hover-show,
+.sidebar.active #btn-menu > .fa-hover-hidden,
+.sidebar.active #btn-menu:focus > .fa-hover-hidden {
+  display: none;
+  transition: all 0.3s ease;
+}
+.sidebar.active #btn-menu > .fa-hover-show,
+.sidebar.active #btn-menu > .fa-hover-show {
+  display: inline-block !important;
+  transition: all 0.3s ease;
 }
 
 .sidebar ul {

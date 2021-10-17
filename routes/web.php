@@ -38,6 +38,9 @@ Route::group(['middleware'=>'auth'], function() {
     Route::group(['prefix'=>'admin', 'middleware'=>'isAdmin'], function () {
         Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
         Route::get('users', [AdminController::class, 'showUsers'])->name('admin.users');
+        Route::post('users', [AdminController::class, 'storeUser'])->name('admin.users');
+        Route::patch('users', [AdminController::class, 'updateUser'])->name('admin.users');
+        Route::delete('users', [AdminController::class, 'deleteUser'])->name('admin.users');
     });
     
     Route::group(['prefix'=>'user', 'middleware'=>'isUser'], function () {

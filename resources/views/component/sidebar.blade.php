@@ -5,7 +5,12 @@
                 Dashboard
             </div>
         </div>
-        <i class='bx bx-menu' id="btn-menu"></i>
+        {{-- <i class='bx bx-menu' id="btn-menu"></i> --}}
+        <div id="btn-menu">
+            <i class='bx bx-menu fa-hover-hidden'></i>
+            <i class='bx bx-x fa-hover-show' style="display: none"></i>
+        </div>
+       
     </div>
 
     <ul class="nav-list">
@@ -48,6 +53,14 @@
             </a>
             <span class="tooltip">About</span>
         </li>
+
+        {{-- <li class="logout-content fixed-bottom">
+            <a href="">
+                <i class='bx bx-info-circle'></i>
+                <span class="links-name">About</span>
+            </a>
+            <span class="tooltip">About</span>
+        </li> --}}
 
     </ul>
 
