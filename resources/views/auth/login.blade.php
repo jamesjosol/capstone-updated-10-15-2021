@@ -24,6 +24,7 @@
 
                             <div class="mb-3 form-group @error('username') has-error @enderror">
                                 {!! Form::label('username','Username',[],false) !!}
+                                @error('username')<span class="errspanicon" id="errspanicon"><i class="fal fa-exclamation-circle"></i></span>@enderror
                                 {!! Form::text('username', null, ['class'=>'form-control', 'id'=>'username']) !!}
                                 <span class="errspan" id="errspan">{{ $errors->first('username') }}</span>
                             </div>
@@ -32,6 +33,7 @@
 
                             <div class="mb-3 form-group @error('password') has-error @enderror">
                                 {!! Form::label('password', 'Password',[],false) !!}
+                                @error('password')<span class="errspanicon" id="errspanicon"><i class="fal fa-exclamation-circle"></i></span>@enderror
                                 {!! Form::password('password', ['class'=>'form-control']) !!}
                                 <span class="errspan" id="errspan">{{ $errors->first('password') }}</span>
                             </div>

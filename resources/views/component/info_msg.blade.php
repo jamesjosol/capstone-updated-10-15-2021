@@ -15,7 +15,7 @@
             <p class="mt-3"><i style="font-size: 5em;" class="fal fa-times-circle text-danger"></i></p>
             <h5 style="margin-top:-3%; color: rgb(46, 46, 46)">Error</h5>
             <p class="text-dark">{{ $error }}</p>
-            <p><button type="button" data-bs-dismiss="modal" aria-label="Close"class="btn ok-close-btn">OK</button></p>
+            <p><button type="button" data-dismiss="modal" aria-label="Close" class="btn ok-close-btn">OK</button></p>
         </div>
         
     </div>
@@ -40,7 +40,7 @@
         <div class="modal-content">
             <p class="mt-3 fw-lighter"><i style="font-size: 5em;" class="fal fa-check-circle text-success fw-lighter"></i></p>
             <h5 style="margin-top:-3%; color: rgb(46, 46, 46)">Success</h5>
-            <p>{{ $message }}</p>
+            <p class="mx-2">{{ $message }}</p>
             <p><button type="button" data-dismiss="modal" aria-label="Close" class="btn ok-close-btn">OK</button></p>
         </div>
     </div>

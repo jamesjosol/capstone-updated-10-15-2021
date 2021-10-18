@@ -1,6 +1,6 @@
 
 
-<table id="example" class="table table-striped table-hover table-bordered table-sm">
+<table id="example" class="table table-striped table-hover table-bordered">
     <thead>
         <tr>
             <th>Name</th>

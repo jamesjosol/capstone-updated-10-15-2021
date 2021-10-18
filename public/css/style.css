@@ -203,6 +203,28 @@ nav {
     color: rgb(255, 113, 113);
 }
 
+.errspanicon  {
+    color: rgb(255, 113, 113);
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group .fa-exclamation-circle{ 
+    position: absolute;
+    float: right;
+    top: 43px;
+    right: 10px;
+}
+
+.reg-form .fa-exclamation-circle{ 
+    position: absolute;
+    float: right;
+    top: 13px;
+    right: 22px;
+}
+
 .ok-close-btn {
     background-color: deepskyblue;
     color: #fff;
